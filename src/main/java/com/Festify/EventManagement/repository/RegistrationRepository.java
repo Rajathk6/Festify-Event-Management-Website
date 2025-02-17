@@ -8,6 +8,6 @@ import com.Festify.EventManagement.model.UserRegister;
 @Repository
 public interface RegistrationRepository extends JpaRepository<UserRegister, Integer> {
 
-    UserRegister findByMail(String email);
+    UserRegister findByEmail(String email);
     
 } 

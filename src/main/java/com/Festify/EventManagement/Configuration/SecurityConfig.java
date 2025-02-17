@@ -37,7 +37,14 @@ public class SecurityConfig {
                 .requestMatchers("/oauth2/**", "/login/**", "/error").permitAll()
                 .anyRequest().authenticated()
             )
-            .oauth2Login(Customizer.withDefaults())
+            // .formLogin(form -> form
+            //                     .loginPage("/signin")
+            //                     .defaultSuccessUrl("/", true)
+            // )   
+            .oauth2Login(oauth -> oauth
+                                    .loginPage("/signup")
+                                    .defaultSuccessUrl("/", true)
+            )
             .logout(logout -> logout
                                 .logoutUrl("/logout")
                                 .logoutSuccessUrl("/")  
