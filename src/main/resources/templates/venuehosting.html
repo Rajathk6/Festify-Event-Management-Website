@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>festify.com</title>
+    <link rel="stylesheet" href="../css/Venuehosting.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+  </head>
+  <body>
+    <!-- NAVIGATION BAR -->
+    <div class="main-navBar">
+      <div class="navBar-img">
+        <!-- Images -->
+        <a href="/">
+          <img
+            src="../images/logo-event_management_v1.png"
+            alt="404 Not Found"
+          />
+        </a>
+      </div>
+      <div class="navBar-contents">
+        <!-- nav-contents -->
+        
+        <a href="../events">Upcoming Events</a>
+        <a href="./venue">Venue Reservations</a>
+      </div>
+        
+      </div>
+    </div>
+
+    <!-- CACHE PARAGRAPH
+    <div class="main-catch">
+      <div class="catchy-line">
+          Catchy Line -->
+        <!-- <h1>
+            Host unforgettable <span class="mainPhrase">events?</span> <br> Start  
+          <span class="mainPhrase">here⬇️ </span>
+        </h1>
+      </div>
+    </div>  -->
+
+            <!-- FORM FOR HOSTING -->
+
+    <div class="main-form">
+        <div class="additional-form">
+            <h2>Fill the below form to host your venue</h2>
+            <hr>
+        
+            <form action="/submit/venuehosting" method="post">
+              <label for="name">Full Name</label>
+              <input type="text" placeholder="Enter your name" id="name" name="fullName" required>
+          
+              <label for="mail">Email</label>
+              <input type="email" placeholder="Enter your Mail id" id="mail" name="email" required>
+          
+              <label for="phone">Phone</label>
+              <input type="tel" placeholder="Enter your Phone Number" id="phone" name="phone" required>
+              
+              <label for="detailsvenue">About your venue</label>
+              <textarea name="venueDetail" id="detailsvenue" rows="4" required></textarea>             
+              <button type="submit" class="submit-btn">Submit</button>
+          </form>         
+    </div>
+    </div>
+
+  </body>
+</html>

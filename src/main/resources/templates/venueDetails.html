@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" th:href="@{../css/venueDetails.css}">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+</head>
+<body>
+
+    <!-- NAVIGATION BAR -->
+    <div class="main-navBar">
+        <div class="navBar-img">
+          <!-- Images -->
+          <a href="/">
+            <img
+              src="../images/logo-event_management_v1.png"
+              alt="404 Not Found"
+            />
+          </a>
+        </div>
+        
+        <div class="navBar-getStarted" sec:authorize = "isAnonymous()">
+          <!-- sign up/log in -->
+          <a href="/signin"><button class="user-account">Sign in</button></a>
+          <a href="/signup"><button class="user-account">Sign up</button></a>
+        </div>
+
+        <div class="navBar-getStarted" sec:authorize = "isAuthenticated()">
+          <!-- /logout is a spring security defaut logout endpoint -->
+          <form th:action="@{/logout}" method="post" id="logoutForm">
+            <button type="submit" class="user-account">Sign out</button>
+        </form>
+        </div>
+          
+          
+        </div>
+      </div>
+    
+    <div class="mainContainerCard" th:each="venue : ${venue}">
+        <div class="mainImageCard">
+            <img th:src="${venue.imageUrl}" alt="th:text='${venue.name}"> 
+        </div>
+        
+        <div class="eventDetails">
+            <h1 th:text="${venue.name}"> heading</h1>
+            <p class="description" th:text="${venue.description}"></p>
+            <hr>
+            
+            <div class="dateTime">
+                <img class="iconImages" src="../images/locationIcon.png" alt="">
+                <p ><span th:text="${venue.address} + ', ' + ${venue.city} + '-'+ ${venue.zipCode}"></span></p>
+            </div>
+
+            <div class="dateTime">
+                <img class="iconImages" src="../images/quantityIcon.png" alt="">
+                <p><span th:text="${venue.capacity}"></span></p>
+            </div>
+            
+            <div class="buyButton">
+                <p> 
+                    <img class="buyButtonImage" src="../images/rupeeIcon.jpeg" alt="">
+                    <span th:text="${venue.price}"></span>
+                    
+                </p>
+                <a><button id="booking"> Book Ticket </button></a>
+                
+            </div>
+              <h1 id="inconvinence"></h1>
+        </div>
+    </div>
+
+    <script>
+      var bookticket = document.getElementById("booking");
+      var message = document.getElementById("inconvinence");
+
+      bookticket.addEventListener("click", function() {
+        message.innerHTML = `This feature is not available!`
+      })
+    </script>
+    
+    
+</body>
+</html>

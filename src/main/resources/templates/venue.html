@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>festify.com</title>
+    <link rel="stylesheet" th:href="@{../css/venue.css}" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    
+    <!-- NAVIGATION BAR -->
+    <div class="main-navBar">
+      <div class="navBar-img">
+        <!-- Images -->
+        <a href="/">
+          <img
+            src="../images/logo-event_management_v1.png"
+            alt="404 Not Found"
+          />
+        </a>
+      </div>
+      <div class="navBar-contents">
+        <!-- nav-contents -->
+        
+        <a href="./events">Upcoming Events</a>
+        <div id="hoverOptions">
+          <a id="host">Become a Host</a>
+          <div id="hosting-arrowdown">
+            <img src="../images/downarroww-removebg-preview.png" alt="">
+          </div>
+          <div class="dropdown-options">
+            <a href="./eventhosting">Host your Event</a>
+            <a href="./venuehosting">Host your Venue</a>
+          </div>
+        </div>
+      </div>
+      <div class="navBar-getStarted" sec:authorize = "isAnonymous()">
+        <!-- sign up/log in -->
+        <a href="./signin"><button class="user-account">Sign in</button></a>
+        <a href="./signup"><button class="user-account">Sign up</button></a>
+      </div>
+
+      <div class="navBar-getStarted" sec:authorize = "isAuthenticated()">
+        <!-- /logout is a spring security defaut logout endpoint -->
+        <form th:action="@{/logout}" method="post" id="logoutForm">
+          <button type="submit" class="user-account">Sign out</button>
+      </form>
+      </div>
+        
+        
+      </div>
+    </div>
+
+    <!-- DESC CARDS -->
+    <div class="eventFilters">
+      
+      <!-- City Dropdown --> 
+        <div class="selector">
+          <div class="selectField">
+            <p id="selectText">Select a city to explore</p>
+            <img id="downarrow" src="./images/downarroww-removebg-preview.png" alt="downarrow">
+          </div>
+          
+          <ul id="list" class="hidden">
+            <div class="main-option">
+              <div class="city-options">
+                <li class="options">Delhi</li>
+                <li class="options">Bengaluru</li>
+                <li class="options">Mumbai</li>
+              </div>
+              <div class="city-options">
+                <li class="options">Kolkata</li>
+                <li class="options">Pune</li>
+                <li class="options">Jaipur</li>
+              </div>
+              <div class="city-options">
+                <li class="options">Indore</li>
+                <li class="options">Hyderabad</li>
+                <li class="options">Chandigarh</li>
+              </div>
+            </div>
+          </ul>
+          
+        </div>
+        <!-- <hr> -->
+        <h1 id="EventHeading"> </h1>
+    </div> 
+
+      <!-- EVENT CARDS -->
+      
+      <div class="card-container">
+        <!-- Thymeleaf Loop -->
+        <div class="card" th:each="Venue : ${Venues}"
+        th:data-city = "${Venue.city}" style="display: none;">
+          
+            <img class="card-img" th:src="${Venue.imageUrl}" alt="Event Image">
+            <div class="card-overlay">
+                <div class="card-body">
+                    <h2 class="card-title" th:text="${Venue.name}">Event Name</h2>
+                    <p><Strong>Capacity: </Strong> <span th:text = "${Venue.capacity}"></span></p>
+                    <p><strong>Price:</strong> ₹<span th:text="${Venue.price}">Price</span></p>
+                </div>
+                <div class="card-footer">
+                    <a th:if="${#strings.equalsIgnoreCase(Venue.status, 'Available')}" 
+                       th:href="@{'/venue/' + ${Venue.id}}" 
+                       class="btn btn-primary">View Details</a>
+                    <button th:if="${#strings.equalsIgnoreCase(Venue.status, 'Unavailable')}" 
+                            class="btn btn-secondary" disabled>Sold Out</button>
+                </div>
+            </div>
+        </div>
+    </div>
+      
+      <script th:src="@{../js/venue.js}"></script>
+  </body>
+</html>
