@@ -16,13 +16,13 @@ public class UserController {
 
     @PostMapping("/signup")
     public String UserDetail(@ModelAttribute UserRegister newUser) {
-        userServe.getUserDetail(newUser);
+        userServe.registerUser(newUser);
         return "redirect:/";
     }
 
-    @PostMapping("/signin")
-    public String userlogin(@ModelAttribute UserRegister newUser) {
-        userServe.verify(newUser);
-        return "redirect:/";
-    }
+    // @PostMapping("/signin")
+    // public String userlogin(@ModelAttribute UserRegister newUser) {
+    //     userServe.verify(newUser);
+    //     return "redirect:/";
+    // }
 }

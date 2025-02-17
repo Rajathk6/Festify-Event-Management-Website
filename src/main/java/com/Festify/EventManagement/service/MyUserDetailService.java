@@ -10,8 +10,10 @@ import com.Festify.EventManagement.model.UserRegister;
 import com.Festify.EventManagement.repository.RegistrationRepository;
 
 @Service
-public class MyUserDetailService implements UserDetailsService{
-    private RegistrationRepository singleUserRepo;
+public class MyUserDetailService implements UserDetailsService {
+
+    private final RegistrationRepository singleUserRepo;
+    
     public MyUserDetailService(RegistrationRepository singleUserRepo) {
         this.singleUserRepo = singleUserRepo;
     }
@@ -19,12 +21,10 @@ public class MyUserDetailService implements UserDetailsService{
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         UserRegister user = singleUserRepo.findByEmail(email.toLowerCase());
-        System.out.println(user);
         if (user == null) {
-            System.out.println("User Not Found");
-            throw new UsernameNotFoundException("user Not Found" + email);
+            throw new UsernameNotFoundException("User Not Found: " + email);
         }
         return new UserPrincipal(user);
     }
-
 }
+
