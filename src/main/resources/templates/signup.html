@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -37,18 +37,14 @@
 
         <p>or</p>
 
-        <form action="">
-            <div class="form-content">
-              <label for="Name">Name</label>
-              <input type="text" id="Name" autocomplete="name" required>
-            </div>
+        <form th:action="@{/signup}" method="post">
             <div class="form-content">
                 <label for="Email">Email</label>
-                <input type="text" id="Email" autocomplete="email" required>
+                <input type="email" id="Email" name="email" autocomplete="email" required>
             </div>
             <div class="form-content">
                 <label for="password">Password</label>
-                <input type="password" id="password" autocomplete="new-password" required>
+                <input type="password" id="password" autocomplete="new-password"  name="password" required>
             </div>
             <div class="create-account">
                 <button>Create account</button>
