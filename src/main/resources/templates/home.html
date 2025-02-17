@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="https://github.com/thymeleaf/thymeleaf-extras-springsecurity">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>festify.com</title>
+    <link rel="stylesheet" href="../css/home.css"/>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- NAVIGATION BAR -->
+    <div class="main-navBar">
+      <div class="navBar-img">
+        <!-- Image -->
+        <a href="/">
+          <img
+            src="../images/logo-event_management_v1.png"
+            alt="404 Not Found"
+          />
+        </a>
+      </div>
+      <div class="navBar-contents">
+        <!-- nav-contents -->
+        <a href="./events">Upcoming Events</a>
+        <a href="./venue">Venue Reservations</a>
+
+        <div id="hoverOptions">
+          <a id="host">Become a Host</a>
+          <div id="hosting-arrowdown">
+            <img src="../images/downarroww-removebg-preview.png" alt="">
+          </div>
+          <div class="dropdown-options">
+            <a href="./eventhosting">Host your Event</a>
+            <a href="./venuehosting">Host your Venue</a>
+          </div>
+        </div>
+        
+        
+      </div>
+      <div class="navBar-getStarted" sec:authorize="isAnonymous()">
+        <!-- sign up/log in -->
+        <a href="./signin"><button class="user-account">Sign in</button></a>
+        <a href="./signup"><button class="user-account">Register</button></a>
+      </div>
+
+      <div class="navBar-getStarted" sec:authorize = "isAuthenticated()">
+        <!-- /logout is a spring security defaut logout endpoint -->
+        <form th:action="@{/logout}" method="post" id="logoutForm">
+          <button type="submit" class="user-account">Sign out</button>
+      </form>
+      </div>
+        
+      </div>
+    </div>
+
+    <!-- CACHE PARAGRAPH -->
+    <div class="main-catch">
+      <div class="catchy-line">
+        <!-- Catchy Line -->
+        <h1>
+          Where Every <span class="mainPhrase">Occasion</span> <br />Becomes
+          <span class="mainPhrase">Unforgettable!</span>
+        </h1>
+
+        <!-- Site Description -->
+        <p class="site-desc">
+          Welcome to Festify! Discover exciting events or book the perfect venue
+          <br />for your next gathering. Whether it's a concert or corporate
+          event, <br />
+          we make every occasion unforgettable.
+        </p>
+      </div>
+
+      <div class="catchy-image"></div>
+    </div>
+
+    <!-- DESC CARDS -->
+    <div class="main-card-container">
+      <div class="card-containers" id="first-card-container">
+        <!-- events booking -->
+        <h2>Upcoming Events</h2>
+        <p>
+          Discover a variety of exciting events happening around you, from
+          concerts and art shows to workshops and festivals.
+        </p>
+        <ul>
+          <li><span>Convenience</span><span class="spacing"></span></li>
+          <li><span>Exclusive Deals</span><span class="spacing"></span></li>
+          <li><span>Dedicated Support</span><span class="spacing"></span></li>
+        </ul>
+        <a href="./events"><button>Explore Events</button></a>
+      </div>
+      <div class="card-containers" id="second-card-container">
+        <!-- venue booking -->
+        <h2>Featured Venues</h2>
+        <p>
+          Find the perfect venues for your gatherings, whether it's a wedding,
+          corporate event, party, or any special occasion—we've got you covered
+        </p>
+        <ul>
+          <li><span>Variety of Choices </span><span class="spacing"></span></li>
+          <li>
+            <span>Transparent Pricing </span><span class="spacing"></span>
+          </li>
+
+          <li><span>User Reviews</span><span class="spacing"></span></li>
+        </ul>
+        <a href="./venue"><button>View Venues</button></a>
+      </div>
+      <div class="card-containers" id="third-card-container">
+        <!-- venue hosting -->
+        <h2>List Your Venue</h2>
+        <p>
+          Ready to host? Let us help you showcase your venue and connect with
+          potential guests for unforgettable experiences.
+        </p>
+        <ul>
+          <li>
+            <span>Increased Visibility</span><span class="spacing"></span>
+          </li>
+          <li>
+            <span>Simple Listing Process</span><span class="spacing"></span>
+          </li>
+          <li><span>Direct Inquiries</span><span class="spacing"></span></li>
+        </ul>
+        <a href="./eventhosting"><button>Become a Host</button></a>
+      </div>
+    </div>
+  </body>
+</html>

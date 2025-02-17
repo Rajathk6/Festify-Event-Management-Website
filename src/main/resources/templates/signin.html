@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Get Started with Festify</title>
+    <link rel="stylesheet" href="../css/signin.css" />
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="sub-container">
+        <div class="company-logo">
+          <img
+            src="../images/logo-event_management_v1.png"
+            alt="404 company logo"
+          />
+        </div>
+        <div class="header-signup">
+          <h1>Welcome back!</h1>
+          <p>Sign in to continue your journey with Festify</p>
+        </div>
+        <div class="button-link">
+          <a
+            href="/oauth2/authorization/google"
+          >
+            <button class="google-signup">
+              <img
+                src="./images/7123025_logo_google_g_icon.png"
+                alt="404 google logo"
+                class="google-logo"
+              />
+              Continue with Google
+            </button>
+          </a>
+        </div>
+
+        <p>or</p>
+
+        <form action="">
+            <div class="form-content">
+                <label for="Email">Email</label>
+                <input type="text" required >
+            </div>
+            <div class="form-content">
+                <label for="password">Password</label>
+                <input type="password" required >
+            </div>
+            <div class="create-account">
+                <button>Create account</button>
+            </div>
+        </form>
+        <div class="signin-page-redirect">
+            <p>New to Festify? </p>
+            <a href="./signup">Create an account!</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

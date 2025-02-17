@@ -1,0 +1,151 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    background: linear-gradient(120deg, #000000, #272626);
+    color: white;
+    font-family: 'Poppins', sans-serif;   
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.sub-container {
+    /* border: 2px solid white; */
+    text-align: center;
+    padding: 1.2rem;
+    border-radius: 10px;
+    min-width: 400px;
+    min-height: 300px;
+    &:hover{    
+            box-shadow: 2.5px 0px 1.5px 2.5px rgb(148, 82, 149);
+            transition: box-shadow 1.5s ease;       
+        }
+}
+
+.company-logo{
+    display: flex;  
+    justify-content: center;
+    align-items: center;
+}
+
+.company-logo img{
+    height: 4em;
+    margin-top: -2px;
+}
+
+.header-signup h1{
+    margin-top: -2px;
+}
+
+.header-signup p {
+    margin-top: -4px;
+    font-size: 1.08rem;
+}
+
+.button-link {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    margin-top: 1.5rem;
+    
+}
+
+.button-link a{
+    text-decoration: none;
+}
+
+.google-signup {
+    margin-top: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:rgb(70, 66, 66);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 15px;
+    cursor: pointer;
+    min-width: 170%;
+    font-size: 1.1rem;
+    font-weight: 500;
+    /* max-width: 100vh; */
+    &:hover{
+        background-color:blueviolet;
+    }
+}
+
+.google-logo {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.form-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;  
+}
+
+.form-content label{
+    font-size: 1.2rem;  
+    padding-bottom: 5px; 
+    font-family: cursive;
+}
+
+.form-content input {
+    min-width: 100%;
+    height: 100%;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    height: 2.2em;
+    border: 1px solid rgb(61, 61, 61);
+    background-color: black;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+    &:focus{
+        border: 3px outset blueviolet;
+    }
+}
+
+.create-account button{
+    margin-top: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:rgb(70, 66, 66);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 15px;
+    cursor: pointer;
+    min-width: 101.5%;
+    font-size: 1.1rem;
+    font-weight: 500;
+    /* max-width: 100vh; */
+    &:hover{
+        background-color:blueviolet;
+    }
+}
+
+.signin-page-redirect{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(182, 183, 183);
+}
+
+.signin-page-redirect a{
+    text-decoration: none;
+    color: white;
+    margin-left: 4px;
+    &:hover{
+        color: blueviolet;
+    }
+}
+

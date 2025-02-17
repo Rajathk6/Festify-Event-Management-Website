@@ -1,0 +1,235 @@
+
+
+body  {
+    background: linear-gradient(120deg, #000000, #272626);
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+                /* NAVIGATION BAR  */
+
+.main-navBar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding-top: 15px; */
+    background: linear-gradient(360deg, #000000, #272626);
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    z-index: 1000; 
+}
+
+.navBar-img{
+    margin-right: -60px;
+}
+
+.navBar-img img{
+    height: 55%;  
+    max-width: 70%;
+    margin-top: 2%;
+    margin-left: -2%;  
+}
+.navBar-contents {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.navBar-contents a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 1.3rem;
+    margin: 0 20px;
+    &:hover{
+        color: #973cec;
+        transition: color 0.25s ease;
+    }
+}
+
+.navBar-getStarted{
+    padding-right: 20px;  
+}
+
+.navBar-getStarted button{
+    align-items: center;
+    font-size: 1.1rem;
+    color: white;
+    background-color: #6A0DAD;
+    border: none;
+    border-radius: 18px;
+    padding: 8px 18px;
+    transition: background-color 0.2s ease;
+    &:hover{
+        cursor: pointer;
+        background-color: #8A2BE2;  
+    }
+}
+
+#hoverOptions {
+    align-items: center;
+    display: flex;
+    margin-top: 5px;
+    padding-bottom: 5px;
+    position: relative; /* Important to position dropdown correctly */
+}
+
+#hosting-arrowdown img {
+    height: 30px;
+    width: 25px;
+    margin-left: -17px;
+    margin-top: 7px;
+}
+
+.dropdown-options {
+    display: none;
+    position: absolute;
+    top: 100%; /* Place it right below the parent */
+    left: 0;
+    background-color: #000000;
+    min-width: 200px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    z-index: 100;
+    padding: 10px 0;
+}
+
+.dropdown-options a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+    white-space: nowrap;
+}
+
+.dropdown-options a:hover {
+    background: none;
+}
+
+/* Keep dropdown open when hovering */
+#hoverOptions:hover .dropdown-options,
+.dropdown-options:hover {
+    display: block;
+}
+
+                /* CACHE PARAGRAPH  */
+
+.main-catch{
+    display: flex; 
+    margin-top: 7vw;
+}
+
+.catchy-line h1{
+    color: white;
+    font-size: 4em;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: auto;
+    margin-left: 1.5%
+}
+
+.mainPhrase{
+    font-weight: bold;
+    color: #9f4fea;
+    font-family: 'Great Vibes', cursive; 
+}
+
+.site-desc{
+    font-size: 1.3rem;
+    text-align: left;
+    margin-left: 1.5%;
+    color: rgb(239, 225, 225)
+}
+
+.catchy-image{
+    background-image: "../Images/catchy_image.jpg"
+}
+
+                /* DESC CARDS */
+
+.main-card-container{
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card-containers{
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    /* height:63vh; */
+    width: 70vh;
+    margin: 1.5rem;
+    background-color:#6e1bbc;
+    transition: background-color 5s ease;
+    box-shadow: inset 0px 0px 20px 20px rgba(139, 67, 195, 0.5);
+    font-family: 'Poppins', sans-serif; 
+    &:hover{
+        transform: translateX(5px);
+    }
+    &:hover .spacing::before{
+        color: black;
+    }
+}
+
+.card-containers:hover li:nth-child(1) .spacing::before{
+    color: black;
+    transition-delay: 0s;
+}
+
+.card-containers:hover li:nth-child(2) .spacing::before{
+    color: black;
+    transition-delay: 0.2s;
+}
+
+.card-containers:hover li:nth-child(3) .spacing::before{
+    color: black;
+    transition-delay: 0.5s;
+}
+.card-containers h2{
+    color: #ffffff;
+    font-size: 1.8em;
+    text-align: center;
+}
+
+.card-containers p{
+    margin-left: 4%;
+    font-size: 1.1rem;
+}
+
+.card-containers li{
+    margin-left: 10%;
+    list-style-type:none;
+    display: flex;
+    font-size: 1.1rem;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.spacing::before{
+    content: '\2713';
+    margin-right: 4rem;
+    color: #6e1bba;
+    font-weight: bolder;
+    font-size: 1.3rem;
+}
+
+.card-containers button{
+    align-items: center;
+    margin-left: 8vw;
+    margin-top: 1vw;
+    font-size: 1.1rem;
+    color: white;
+    background-color: #000000;
+    border: none;
+    border-radius: 18px;
+    padding: 1rem 1rem;
+    
+    &:hover{
+        cursor: pointer;
+        color: black;  
+        background-color: white;
+        transition: background-color 0.4s ease;
+    }
+}
