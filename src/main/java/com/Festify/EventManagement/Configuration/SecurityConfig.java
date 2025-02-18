@@ -27,12 +27,12 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http
-            .csrf(csrf -> csrf.disable())
             .authorizeHttpRequests(authorize -> authorize
                 .requestMatchers("/", "/css/**", "/js/**", "/images/**").permitAll()
-                .requestMatchers("/events**","/venue/**").permitAll()
+                .requestMatchers("/events/**","/venue/**").permitAll()
                 .requestMatchers("/eventhosting/**", "/venuehosting/**").permitAll()
                 .requestMatchers("/signin/**", "/signup/**").permitAll()
+                .requestMatchers("/submit/**").permitAll()
                 .requestMatchers("/admin/**").hasRole("ADMIN")
                 // standard oauth2 endpoints
                 .requestMatchers("/oauth2/**", "/login/**", "/error").permitAll()
@@ -57,13 +57,21 @@ public class SecurityConfig {
             )       
             // Use stateless session management if desired
             .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED))
+            .rememberMe(rememberMe -> rememberMe
+                .rememberMeParameter("remember-me") // Name of the checkbox in the login form
+                .rememberMeCookieName("remember-me-cookie") // Custom cookie name
+                .tokenValiditySeconds(1209600) // Token validity period (e.g., 14 days)
+                .key("uniqueAndSecretKey") // Secret key for token hashing
+                .userDetailsService(userdetails)
+                .useSecureCookie(true) // Use secure cookie if using HTTPS
+            )   
             .build();
     }
 
     @Bean
     public AuthenticationProvider authenticationProvider() {
         DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
-        provider.setPasswordEncoder(new BCryptPasswordEncoder(12));
+        provider.setPasswordEncoder(passwordEncoder());
         provider.setUserDetailsService(userdetails);
         return provider;
     }

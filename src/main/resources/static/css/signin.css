@@ -113,6 +113,10 @@ html, body {
     }
 }
 
+.remember-me {
+    display: flex;
+}
+
 .create-account button{
     margin-top: 2px;
     display: flex;
