@@ -20,18 +20,18 @@ public class EventHostDatabase {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
+    @Column(name = "full_name", nullable = false)
     private String fullName;
     
-    @Column(nullable = false)
+    @Column(name = "email",nullable = false)
     private String email;
 
-    @Column(nullable = false)
+    @Column(name = "phone",nullable = false)
     private String phone;
 
-    @Column(nullable = false)
+    @Column(name = "event_category", nullable = false)
     private String eventCategory;
 
-    @Column(nullable = false)
+    @Column(name = "venue_detail", nullable = false)
     private String venueDetail;
 }

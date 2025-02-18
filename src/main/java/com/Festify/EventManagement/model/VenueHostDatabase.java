@@ -20,7 +20,7 @@ public class VenueHostDatabase {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
+    @Column(name = "full_name", nullable = false)
     private String fullName;
 
     @Column(nullable = false)
@@ -29,6 +29,6 @@ public class VenueHostDatabase {
     @Column(nullable = false)
     private String phone;
 
-    @Column(nullable = false)
+    @Column(name = "venue_detail", nullable = false)
     private String venueDetail;
 }
