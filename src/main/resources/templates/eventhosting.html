@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="https://github.com/thymeleaf/thymeleaf-extras-springsecurity">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -51,15 +51,16 @@
             <h2>Fill the below form to get your events live</h2>
             <hr>
         
-            <form action="/submit/eventhosting" method="post">
+            <form action="/submit/eventhosting" method="post" >
+              <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
               <label for="name">Full Name</label>
               <input type="text" placeholder="Enter your name" id="name" name="fullName" required>
           
               <label for="mail">Email</label>
-              <input type="email" placeholder="Enter your Mail id" id="mail" name="email" required>
+              <input type="email" placeholder="Enter your Mail id" id="mail" name="email" autocomplete="email">
           
               <label for="phone">Phone</label>
-              <input type="tel" placeholder="Enter your Phone Number" id="phone" name="phone" required>
+              <input type="tel" placeholder="Enter your Phone Number" id="phone" name="phone">
           
               <label for="event">Event Category</label>
               <select name="eventCategory" id="event" required>

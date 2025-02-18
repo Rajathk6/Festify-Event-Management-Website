@@ -38,6 +38,10 @@
         <p>or</p>
 
         <form th:action="@{/signup}" method="post">
+          <div class="form-content">
+            <label for="name">Full Name</label>
+            <input type="text" id="Email" name="name" required>
+        </div>
             <div class="form-content">
                 <label for="Email">Email</label>
                 <input type="email" id="Email" name="email" autocomplete="email" required>

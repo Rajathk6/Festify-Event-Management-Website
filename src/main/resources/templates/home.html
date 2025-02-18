@@ -57,12 +57,32 @@
     </div>
 
     <!-- CACHE PARAGRAPH -->
-    <div class="main-catch">
+    <div class="main-catch" sec:authorize="isAnonymous() or isAuthenticated() or hasRole('USER')">
       <div class="catchy-line">
         <!-- Catchy Line -->
         <h1>
           Where Every <span class="mainPhrase">Occasion</span> <br />Becomes
           <span class="mainPhrase">Unforgettable!</span>
+        </h1>
+
+        <!-- Site Description -->
+        <p class="site-desc">
+          Welcome to Festify! Discover exciting events or book the perfect venue
+          <br />for your next gathering. Whether it's a concert or corporate
+          event, <br />
+          we make every occasion unforgettable.
+        </p>
+      </div>
+
+      <div class="catchy-image"></div>
+    </div>
+
+    <div class="main-catch" sec:authorize="hasRole('ADMIN')">
+      <div class="catchy-line">
+        <!-- Catchy Line -->
+        <h1>
+          ADMIN DASHBOARD <span class="mainPhrase"></span> <br />Welcome
+          <span class="mainPhrase">Rajath!</span>
         </h1>
 
         <!-- Site Description -->
