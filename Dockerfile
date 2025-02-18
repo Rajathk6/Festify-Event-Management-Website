@@ -5,6 +5,10 @@ RUN mvn clean package -DskipTests
 
 # openjdk is the server we will be running our .jar file 
 FROM openjdk:21-jdk-slim
+# RUN apt-get update && \
+#     apt-get install -y ca-certificates && \
+#     update-ca-certificates && \
+#     rm -rf /var/lib/apt/lists/*
 COPY --from=build /target/EventManagement-0.0.1-SNAPSHOT.jar festify.jar
 EXPOSE 8080
 ENTRYPOINT [ "java", "-jar", "festify.jar" ]
