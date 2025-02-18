@@ -4,22 +4,40 @@ Festify is a full-stack event management web application built using Spring Boot
 
 ### 🚀 **Features**
 
-✅ **Event Listings** – View and explore upcoming events with detailed descriptions.
+✅ **Event Listings** 
 
-✅ **Venue Management** – Browse event venues with images, capacity, and availability.
+ * View and explore upcoming events with detailed descriptions.
 
-✅ **Event Details Page** – See event-specific details before purchasing tickets.
+✅ **Venue Management** 
 
-✅ **Hosting** – Submit requests to host your events and venues; submissions are reviewed before they appear on the site.
+ * Browse event venues with images, capacity, and availability.
 
-✅ **Authentication & Authorization** – Secure user authentication with role-based access; only admins can perform CRUD operations and manage site content.
+✅ **Event Details Page** 
 
-✅ **Security Features** – Built-in protection against common vulnerabilities with Spring Security, ensuring data integrity and user privacy.
+ * See event-specific details before purchasing tickets.
+
+✅ **Hosting** 
+
+ * Submit requests to host your events and venues; submissions are reviewed before they appear on the site.
+
+✅ **Authentication & Authorization** 
+
+ * Secure user authentication with role-based access.
+   
+ * Form-Based authentication and OAuth2 authentication features.
+
+✅ **Security Features** 
+
+  * Built-in protection against common vulnerabilities with Spring Security, ensuring data integrity and user privacy.
+
+  * Session is managed only when required which lets user log-in once and stay logged in.
+  
+  * "Remember-Me" Feature implemented for better user experiencce
 
 ### 🛠️ **Tech Stack**
 
-🔲**Backend:** Maven, Java Spring Boot, Thymeleaf, MySQL, Spring Data JPA, Spring Security.
+<> **Backend:** Maven, Java Spring Boot, Thymeleaf, Spring Data JPA, Spring Security, OAuth2.
 
-🔲**Frontend:** HTML, CSS, JavaScript
+<> **Frontend:** HTML, CSS, JavaScript
 
-🔲**Database:** MySQL
+<> **Database:** MySQL
