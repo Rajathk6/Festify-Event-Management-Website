@@ -33,4 +33,5 @@ public class HostingController {
         VenueHostService.addVenuedetails(hostvenue);
         return new ResponseEntity<>("Venue hosted successfully", HttpStatus.CREATED);
     }
+    
 }
