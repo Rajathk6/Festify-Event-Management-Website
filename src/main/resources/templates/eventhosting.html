@@ -45,12 +45,10 @@
     </div>  -->
 
             <!-- FORM FOR HOSTING -->
-
     <div class="main-form">
         <div class="additional-form">
             <h2>Fill the below form to get your events live</h2>
             <hr>
-        
             <form action="/submit/eventhosting" method="post" >
               <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
               <label for="name">Full Name</label>

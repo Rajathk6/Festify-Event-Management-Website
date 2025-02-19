@@ -2,6 +2,8 @@ package com.Festify.EventManagement.controller;
 
 import java.util.List;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,7 +21,8 @@ public class EventController {
 
     // DISPLAYS THE EVENTS PRESENT IN THE EVENT DATABASE
     @GetMapping("/data")
-    public List<EventDataBase> getName() {
-        return service.trashData();
+    public ResponseEntity<List<EventDataBase>> getName() {
+        List<EventDataBase> events = service.trashData();
+        return new ResponseEntity<>(events, HttpStatus.OK);
     }
 }

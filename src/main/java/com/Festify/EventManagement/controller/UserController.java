@@ -1,5 +1,7 @@
 package com.Festify.EventManagement.controller;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,9 +17,9 @@ public class UserController {
     }
 
     @PostMapping("/signup")
-    public String UserDetail(@ModelAttribute UserRegister newUser) {
+    public ResponseEntity<String> UserDetail(@ModelAttribute UserRegister newUser) {
         userServe.registerUser(newUser);
-        return "redirect:/";
+        return new ResponseEntity<>("User registered successfully", HttpStatus.CREATED);
     }
 
     // @PostMapping("/signin")

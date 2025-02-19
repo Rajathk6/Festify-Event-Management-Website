@@ -1,5 +1,7 @@
 package com.Festify.EventManagement.controller;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,14 +23,14 @@ public class HostingController {
     }
 
     @PostMapping("/eventhosting")
-    public String getEvent(@ModelAttribute EventHostDatabase hostdata) {
+    public ResponseEntity<String> getEvent(@ModelAttribute EventHostDatabase hostdata) {
         EventHostService.addEventdetails(hostdata);
-        return "redirect:/eventhosting";
+        return new ResponseEntity<>("Event hosted successfully", HttpStatus.CREATED);
     }
 
     @PostMapping("/venuehosting")
-    public String getvenue(@ModelAttribute VenueHostDatabase hostvenue) {
+    public ResponseEntity<String> getvenue(@ModelAttribute VenueHostDatabase hostvenue) {
         VenueHostService.addVenuedetails(hostvenue);
-        return "redirect:/venuehosting";
+        return new ResponseEntity<>("Venue hosted successfully", HttpStatus.CREATED);
     }
 }
