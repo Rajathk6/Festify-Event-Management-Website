@@ -55,7 +55,7 @@ public class RequestHandler {
     public String GetVenueById(@PathVariable Long id, Model model) {
         List<VenueDataBase> venue = Venueservice.getVenueById(id);
         model.addAttribute("venue", venue);
-        return "VenueDetails";
+        return "venueDetails";
     }
 
     @GetMapping("/eventhosting")
