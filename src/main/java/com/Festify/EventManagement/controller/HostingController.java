@@ -31,4 +31,5 @@ public class HostingController {
         VenueHostService.addVenuedetails(hostvenue);
         return "redirect:/venuehosting";
     }
+    
 }
