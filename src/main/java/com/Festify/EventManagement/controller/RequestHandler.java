@@ -77,4 +77,9 @@ public class RequestHandler {
     public String signup() {
         return "signup";
     }
+
+    @GetMapping("/privacy-policy")
+    public String policy() {
+        return "privacyPolicy";
+    }
 }
