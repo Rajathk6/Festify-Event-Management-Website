@@ -13,10 +13,12 @@
     <div class="main-container">
       <div class="sub-container">
         <div class="company-logo">
-          <img
-            src="../images/logo-event_management_v1.png"
-            alt="404 company logo"
-          />
+          <a href="/">
+            <img
+              src="../images/logo-event_management_v1.png"
+              alt="404 company logo"
+            />
+          </a>
         </div>
         <div class="header-signup">
           <h1>Welcome back!</h1>
@@ -55,7 +57,10 @@
           </div>
           
           <div class="create-account">
-              <button>Create account</button>
+              <button>Sign In</button>
+          </div>
+          <div th:if="${param.error}" class="error">
+            <p>Invalid username or password. Please try again.</p>
           </div>
         <div class="signin-page-redirect">
             <p>New to Festify? </p>

@@ -43,6 +43,7 @@ public class SecurityConfig {
                 .usernameParameter("email") 
                 .passwordParameter("password")
                 .defaultSuccessUrl("/", true)
+                .failureUrl("/signin?error=true")
                 .permitAll()
             ) 
             .oauth2Login(oauth -> oauth
