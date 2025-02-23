@@ -33,7 +33,7 @@ public class SecurityConfig {
                 .requestMatchers("/signin/**", "/signup/**").permitAll()
                 .requestMatchers("/submit/**").permitAll()
                 .requestMatchers("/admin/**").hasRole("ADMIN")
-                // standard oauth2 endpoints
+                .requestMatchers("/privacy-policy/**").permitAll()
                 .requestMatchers("/oauth2/**", "/login/**", "/error").permitAll()
                 .anyRequest().authenticated()
             )
