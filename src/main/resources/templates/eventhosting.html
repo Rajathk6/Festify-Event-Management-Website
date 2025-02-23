@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="google-site-verification" content="O15iNvdCTq4FtD-7ycaJ0qp4bMwMjh1582pyjrGIc6c" />
     <title>festify.com</title>
     <link rel="stylesheet" href="../css/eventhosting.css" />
     <link
@@ -45,7 +46,9 @@
     </div>  -->
 
             <!-- FORM FOR HOSTING -->
+    
     <div class="main-form">
+        <h2 id="message"></h2>
         <div class="additional-form">
             <h2>Fill the below form to get your events live</h2>
             <hr>
@@ -73,11 +76,18 @@
               <label for="detailsvenue">Venue Details</label>
               <textarea name="venueDetail" id="detailsvenue" rows="4" required></textarea>
               
-              <button type="submit" class="submit-btn">Submit</button>
+              <button type="submit" id="submit-btn">Submit</button>
           </form>
           
     </div>
     </div>
+      <script>
+        var button = document.getElementById("submit-btn");
+        var message = document.getElementById("message")
+        button.addEventListener("click", function() {
+          message.innerHTML("Your hosting details has been stored in for verification");
+        })      
+      </script>
 
   </body>
 </html>

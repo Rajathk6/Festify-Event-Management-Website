@@ -179,7 +179,7 @@ textarea:focus {
   border: 2px solid #6e1bba;
 }
 
-button.submit-btn {
+button#submit-btn {
   background-color: #6e1bba;
   color: white;
   padding: 1rem;
@@ -190,6 +190,6 @@ button.submit-btn {
   transition: background-color 0.3s ease;
 }
 
-button.submit-btn:hover {
+button#submit-btn:hover {
   background-color: #5b139c;
 }
